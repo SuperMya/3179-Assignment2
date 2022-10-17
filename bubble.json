@@ -1,0 +1,113 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/top24_country.csv"
+  },
+  "width": 250,
+  "height": 250,
+    "params": [
+    {
+      "name": "Country",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Afghanistan",
+          "Azerbaijan",
+          "Burundi",
+          "Chad",
+          "Congo",
+          "Congo Democratic Republic",
+          "Cote d'Ivoire",
+          "Eritrea",
+          "Ethiopia",
+          "Gambia",
+          "Guinea",
+          "Mali",
+          "Morocco",
+          "Myanmar",
+          "Niger",
+          "Pakistan",
+          "Sierra Leone",
+          "Tajikistan",
+          "Tanzania",
+          "Timor-Leste",
+          "Turkmenistan",
+          "Uganda",
+          "Yemen",
+          "Zambia"
+        ],
+        "labels": [
+          "Show All",
+          "Afghanistan",
+          "Azerbaijan",
+          "Burundi",
+          "Chad",
+          "Congo",
+          "Congo Democratic Republic",
+          "Cote d'Ivoire",
+          "Eritrea",
+          "Ethiopia",
+          "Gambia",
+          "Guinea",
+          "Mali",
+          "Morocco",
+          "Myanmar",
+          "Niger",
+          "Pakistan",
+          "Sierra Leone",
+          "Tajikistan",
+          "Tanzania",
+          "Timor-Leste",
+          "Turkmenistan",
+          "Uganda",
+          "Yemen",
+          "Zambia"
+        ],
+        "name": "Country Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Entity !== 'All natural disasters'"},
+    {
+      "filter": "Country == null || datum.Country == Country"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "Survey Year",
+      "type": "temporal",
+      "axis": {"grid": false}
+    },
+    "y": {"field": "Country", "type": "nominal", "axis": {"title": "Country"}},
+    "size": {
+      "field": "Value%",
+      "type": "quantitative",
+      "title": "Value",
+      "legend": {"clipHeight": 20},
+      "scale": {
+        "rangeMax": 1000
+      }
+    },
+    "color": {"field": "Country", "type": "nominal", "legend": null},
+    "tooltip": [
+                  {
+                    "field": "Country",
+                    "type": "nominal",
+                    "title": "Country"
+                  },
+                  {"field": "Survey Year", "type": "temporal"},
+                  {"field": "Value%", "type": "quantitative"}
+
+                ]
+
+  }
+
+}
