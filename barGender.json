@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 340,
+  "height": 100,
+  "title":"Comparison of Gender",
+  "data": {"url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/violence_data.csv"},
+  "mark": "bar",
+  "encoding": {
+    "x": {"aggregate": "average","field":"Value%", "title": "Average of Value"},
+    "y": {"field": "Gender"},
+    "color": {"field": "Gender", "type": "nominal"},
+    "tooltip": [
+                  {
+                    "field": "Gender",
+                    "type": "nominal",
+                    "title": "Gender"
+                  },
+                  {"aggregate": "average","field": "Value%", "type": "quantitative"}
+
+                ]
+
+  }
+}
