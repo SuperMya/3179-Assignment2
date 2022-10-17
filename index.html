@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Violence against women and girls</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Violence Against Women And Girls</h1>
+        <p>It shows some graphs about violence against women and girls. Shows the distribution of respondents' acceptance of violence in different countries on the map. It shows the nine countries with the highest level of acceptance of violence. It shows how the acceptance of violence changes over time.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description-left">
+          <h2>Distribution on the map</h2>
+          <div class="map-mid">
+            <div id="vis2" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div class="description-left">
+          <h2>Ranking</h2>
+          <div id="vis3" class="vis-container" style="margin-left: 5px;"></div>
+        </div>
+      </div>
+
+      <div class="pure-u-1-3" style="width: 31.5%;">
+        <div class = "description-right-right">
+          <p>Among respondents in different countries, the nine countries with the
+             highest average acceptance of violence against women and girls were: Timor,Eritrea,Morocco,Tajikistan,
+             Afghanistan,Chad,Guinea,Mali,
+             Congo Democratic Republic.</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+
+    <div class="pure-g">
+      <div class="pure-u-1-1" >
+        <h2>Change</h2>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-2-3" style="width: 35.5%;">
+        <div class="description-right">
+          
+          
+          <p>With the development of time, the graph shows that violence 
+            against women and girls is becoming more and more unacceptable, 
+            indicating that people are paying more and more attention to women's health and safety.
+            Although there is a clear upward trend in the data in 2018, this ratio does not affect 
+            the analysis of the overall trend.</p>
+        </div>
+      </div>
+
+      <div class="pure-u-1-3">
+        <div id="vis4" class="vis-container" style="padding-left: 120px;"></div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <h2>Number of respondents and acceptance</h2>
+        <div id="vis1" class="vis-container" style="margin-left: 5px;"></div>
+      </div>
+      <div class="pure-u-1-3" style="width: 30.5%;">
+        <div class="description-right-right">
+          
+          <p>The chart shows that more countries were interviewed between 2010 and 2018 than 
+            between 2000 and 2009. The scale of the project on violence against women and girls
+            has also grown over time, and more people are aware of and concerned about the topic.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-1" >
+        <h2>Conpare between different types</h2>
+      </div>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-2-3"  style="width: 35.5%;">
+        <div class="description-right">
+          <p>Based on the survey of respondents of different genders, age groups, educational backgrounds 
+            and work situations, it can be seen that younger people with less education and the types of jobs 
+            employed for kind are more likely to accept violent acts against women. 
+          </p>
+        </div>
+      </div>
+
+      <!--<div class="pure-u-1-3" style="width: 30.5%;">
+        <div class="description-right">
+          
+       <p>Based on the survey of respondents of different genders, age groups, educational backgrounds 
+        and work situations, it can be seen that younger people with less education and the types of jobs 
+        employed for kind are more likely to accept violent acts against women. </p>
+        </div>
+      </div>-->
+
+      <div class="pure-u-1-3">
+      
+        <div id="vis9" class="vis-container" style="padding-left: 95px;" ></div>
+      </div>
+      
+    </div>
+
+
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div id="vis7" class="vis-container" style="margin-left: 5px;"></div>
+      </div>
+
+      <div class="pure-u-1-3">
+        <div id="vis6" class="vis-container" ></div>
+
+      </div>
+
+      <div class="pure-u-1-3">
+        <div id="vis5" class="vis-container" ></div>
+
+      </div>
+      
+
+    </div>
+
+
+    <div class="pure-g">
+      <div class="pure-u-1-1" >
+        <div class="description-right">
+          <h2>Conclusion</h2>
+          
+          <p>It is worth mentioning that women's acceptance of this topic is higher than that of men, 
+            which further demonstrates the importance of raising women's awareness of self-protection. 
+            Raising the education level of women is a very effective measure. After all, surveys show 
+            that people with higher education levels are far less tolerant of violence than people with
+            other education levels.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./bubble.json";
+    var specVis2 = "./map.json";
+    var specVis3 = "./rank.json";
+    var specVis4 = "./bar.json";
+    var specVis5 = "./lineAge.json";
+    var specVis6 = "./lineEducation.json";
+    var specVis7 = "./lineEmployment.json";
+    var specVis8 = "./lineMarry.json";
+    var specVis9 = "./barGender.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis8', specVis8, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis9', specVis9, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+
+  </script>
+</body>
+
+</html>
