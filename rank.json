@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Top Country by Average acceptance of violence",
+  "data": {"url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/violence_data.csv"},
+  "mark": "bar",
+  "width":250,
+  "height":250,
+  "transform": [
+    {
+      "aggregate": [{"op": "average","field": "Value%", "as": "value"}],
+      "groupby": ["Country"]
+    },
+    {
+      "window": [{"op": "row_number", "as": "rank"}],
+      "sort": [{ "field": "value", "order": "descending" }]
+    },
+    {
+      "calculate": "datum.rank < 10 ? datum.Country : 'All Others'", "as": "ranked_Country"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "aggregate": "average",
+      "field": "value",
+      "type": "quantitative",
+      "title": null
+    },
+    "y": {
+      "sort": {"op": "mean", "field": "value", "order": "descending"},
+      "field": "ranked_Country",
+      "type": "ordinal",
+      "title": null
+    },
+    "color": {"field": "ranked_Country", "type": "nominal", "legend": null},
+    "tooltip": [
+                  {
+                    "field": "ranked_Country",
+                    "type": "nominal",
+                    "title": "Country"
+                  },
+                  {"aggregate": "average","field": "value", "type": "quantitative"}
+
+                ]
+
+  }
+}
