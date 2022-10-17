@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {"url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/data_filter_marry.csv"},
+  "width":200,
+  "height":200,
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": false,
+      "fill": "white"
+
+    }
+    
+  },
+  "encoding": {
+    "x": {"timeUnit": "year", "field": "Survey Year"},
+    "y": {"aggregate":"average", "field": "Value%", "type": "quantitative"},
+    "color": {"field": "Demographics Response", "type": "nominal","title":"Marry"},
+"tooltip": [
+                  {
+                    "field": "Demographics Response",
+                    "type": "nominal",
+                    "title": "Range of age"
+                  },
+                  {"field": "Survey Year", "type": "temporal","title":"Year"},
+                  {"aggregate":"average", "field": "Value%", "type": "quantitative","title":"Average of Value"}
+
+                ]
+    
+    
+  }
+}
