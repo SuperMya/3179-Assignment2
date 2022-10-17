@@ -1,0 +1,100 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+  "url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/violence_data.csv"
+},
+"title": "Percentage of respondents who accept violence",
+"width": 600,
+        "height": 300,
+        "params": [
+   
+          {
+            "name": "zoom_level",
+            "value": 100,
+            "bind": {
+              "input": "range",
+              "min": 1,
+              "max": 200,
+              "step": 1,
+              "name": "Zoom: "
+            }
+          }
+        ],
+        "projection": {"type": "equalEarth", "rotate": [-150, 0, 0],
+        "scale": {"expr": "zoom_level"}},
+        "layer": [
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "mark": {
+              "type": "geoshape",
+              "fill": "lightgray",
+              "stroke": "white"
+            }
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+              "format": {"type": "topojson", "feature": "oceans"}
+            },
+            "mark": {"type": "geoshape", "fill": "skyblue"}
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_graticules_30"
+              }
+            },
+            "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/SuperMya/3179/main/js/ne_110m_admin_0_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "transform": [
+              {
+                "lookup": "properties.NAME",
+                "from": {
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/violence_data.csv"
+                  },
+                  "key": "Country",
+                  "fields": ["Value%"]
+                }
+              }
+            ],
+            "mark": {"type": "geoshape", "stroke": "white"},
+            "encoding": {
+              "color": {
+                
+                "field": "Value%",
+                "type": "quantitative",
+                "scale": {
+                  
+                  "domain": [1, 10, 81],
+                  "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+                }
+              },
+              "tooltip": [
+                {
+                  "field": "properties.NAME",
+                  "type": "nominal",
+                  "title": "Country"
+                },
+                {"field": "Value%", "type": "quantitative"}
+              ]
+            }
+          }
+        ]
+}
