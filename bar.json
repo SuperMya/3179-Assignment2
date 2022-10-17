@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/SuperMya/3179-Assignment2/main/data/violence_data.csv"
+  },
+  
+      "width": 360,
+      "height": 250,
+      "title":"Acceptance changes over time",
+  "layer":[
+    {
+      "mark": {"type": "bar", "color": "#95d1f4"},
+  "encoding": {
+    "x": {"timeUnit": "year", "field": "Survey Year", "type": "ordinal"},
+    "y": {"aggregate": "average", "field": "Value%"},
+    "tooltip": [
+                  {
+                    "field": "Survey Year",
+                    "type": "temporal",
+                    "title": "Year"
+                  },
+                  {"aggregate": "average","field": "Value%", "type": "quantitative"}
+
+                ]
+  }
+    },
+  {
+    "mark":{
+      "type":"line",
+      "point": {
+      "filled": false,
+      "fill": "white"},
+      "color":"#01090f"
+      },
+    "encoding": {
+    "x": {"timeUnit": "year", "field": "Survey Year", "type": "ordinal"},
+    "y": {"aggregate": "average", "field": "Value%"},
+    "tooltip": [
+                  {
+                    "field": "Survey Year",
+                    "type": "temporal",
+                    "title": "Year"
+                  },
+                  {"aggregate": "average","field": "Value%", "type": "quantitative"}
+
+                ]
+    }
+  }
+  ]
+}
